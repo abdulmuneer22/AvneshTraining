@@ -6,6 +6,7 @@ import {
   Dimensions,
   TextInput,
   TouchableHighlight,
+  TouchableOpacity
   
 } from 'react-native';
 const window = Dimensions.get('window');
@@ -39,7 +40,30 @@ class ForgotPasword extends Component{
         
         
         <View style={{flexDirection : 'row'}}>
-        <Button buttonLabel = "Submit" navigator={this.props.navigator} />
+        <TouchableOpacity
+                style={{
+                            flexDirection : 'column',
+                            alignItems : 'center',
+                            //width: (window.width * 0.70/2),
+                            backgroundColor : 'white',
+                            height : 45,
+                            borderColor : 'white',
+                            borderWidth : 6,
+                            borderRadius : 0.5,
+                            justifyContent : 'center',
+                            marginBottom :10,
+                            marginTop : 10,
+                            flex : 1
+                           
+                }}
+                
+                >
+                <Text style={{
+                            fontSize : 16,
+                            fontWeight : 'bold',
+                            color : 'black'
+                }}>Submit</Text>
+                </TouchableOpacity>
         
         </View>
         

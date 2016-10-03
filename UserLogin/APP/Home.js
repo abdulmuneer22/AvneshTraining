@@ -61,7 +61,6 @@ render(){
     return(
             
             <Navigator
-            
             initialRoute={{name: 'mainScreen'}}
             renderScene={this.renderScene.bind(this)}
             //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}

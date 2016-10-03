@@ -40,7 +40,7 @@ handleChildFunc(){
            
         }}>
 
-        <StatusBar leftIcon='menu' name=" "/>
+        
         
         <View style={{
             alignItems : 'center',
@@ -91,7 +91,7 @@ handleChildFunc(){
         
         </View>
 
-         <View style={{
+        <View style={{
         marginTop : 20,backgroundColor : 'white',padding : 5
         }}>
 
@@ -121,6 +121,15 @@ handleChildFunc(){
         </View>
 
         
+        <View>
+         <Text style={{
+            marginTop : 10,
+            color : 'orange',
+            fontSize : 16
+        }}>{this.state.error}</Text>
+        </View>
+
+        
         
         <View
         style ={{
@@ -141,7 +150,7 @@ handleChildFunc(){
                         //alert("No User")
                         this.setState({error: "Please Enter User Name and Password"})
                     }else{
-                        if(this.state.userName == 'muneer' && this.state.password == '1234'){
+                        if(this.state.userName == 'member' && this.state.password == '1234'){
                             this.props.navigator.push({name : 'welcomeScreen'})
                         }else{
                         this.setState({error: "Invalid User Name Or Password"})
@@ -240,11 +249,7 @@ handleChildFunc(){
         </View>
 
         </View>
-        <Text style={{
-            marginTop : 10,
-            color : 'orange',
-            fontSize : 16
-        }}>{this.state.error}</Text>
+        
 
         </View>
 

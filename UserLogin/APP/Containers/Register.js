@@ -5,7 +5,8 @@ import {
   View,
   Dimensions,
   TextInput,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 
 import UserInput from '../Components/UserInput'
@@ -48,9 +49,9 @@ class Register extends Component {
 
         <View>
 
-        <UserInput displayText="User Name" check = ""{...this.props}/>
-        <UserInput displayText="Password" secureText = {true} {...this.props}/>
-        <UserInput displayText="Password" secureText = {true} {...this.props}/>
+        <UserInput displayText="First Name" check = ""{...this.props}/>
+        <UserInput displayText="Last Name"  {...this.props}/>
+        <UserInput displayText="Date Of Birth eg MM/DD/YYYY" secureText = {true} {...this.props}/>
         
 
         <View
@@ -67,41 +68,40 @@ class Register extends Component {
             flex : 1,
             marginRight : 5
         }}>
-        <Button buttonLabel="Register"/>
+        <TouchableOpacity
+        onPress={()=>{this.props.navigator.push({name:'welcomeScreen'})}}
+                style={{
+                            flexDirection : 'column',
+                            alignItems : 'center',
+                            //width: (window.width * 0.70/2),
+                            backgroundColor : 'white',
+                            height : 45,
+                            borderColor : 'white',
+                            borderWidth : 6,
+                            borderRadius : 0.5,
+                            justifyContent : 'center',
+                            marginBottom :10,
+                            marginTop : 10,
+                            flex : 1
+                           
+                }}
+                
+                >
+                <Text style={{
+                            fontSize : 16,
+                            fontWeight : 'bold',
+                            color : 'black'
+                }}>Register</Text>
+                </TouchableOpacity>
         </View>
 
-        <View style={{
-            flex : 1
-        }}>
-        <Button buttonLabel = "Clear"/>
-        </View>
+        
         
         
         </View>
         
 
-        <View style={{flexDirection : 'row',marginTop :10}}>
-        <Text style={{
-            color : 'white',
-            alignSelf : 'flex-start',
-            //marginLeft : 50,
-            flex : 1,
-            textAlign : 'left'
-            }}>
-            Register
-    
-        </Text>
-
-        <Text style={{
-            color : 'white',
-            alignSelf : 'flex-end',
-            //marginRight : 60,
-            flex : 1,
-            textAlign : 'right'
-            }}
-            onPress={()=>{this.props.navigator.push({name : 'forgotPassword'})}}
-            >Forgot Password ?</Text>
-        </View>
+        
 
         </View>
 

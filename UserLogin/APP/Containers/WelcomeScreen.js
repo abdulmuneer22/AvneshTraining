@@ -15,7 +15,8 @@ class WelcomeScreen extends Component{
     render(){
         return(
             <View>
-            <StatusBar leftIcon='menu' title="Hi John !" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
+            <Text>Florida Blue</Text>
+            <Text>Welcom Back John!</Text>
 
             <Text>Welcome Screen</Text>
             </View>
