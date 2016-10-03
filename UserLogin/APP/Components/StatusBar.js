@@ -34,6 +34,9 @@ class StatusBar extends Component{
 
             case 'Register':
             this.props.navigator.pop()
+
+            case 'Pay Now':
+            this.props.navigator.pop()
         
         default : 
             console.log('menu button')

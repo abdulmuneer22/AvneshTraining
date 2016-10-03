@@ -14,6 +14,8 @@ import Main from './main'
 import ForgotPassword from './Containers/ForgotPassword'
 import Register from './Containers/Register'
 import WelcomeScreen from './Containers/WelcomeScreen'
+import PayNow from './Containers/PayNow'
+
 
 
 
@@ -22,6 +24,11 @@ import WelcomeScreen from './Containers/WelcomeScreen'
 class Home extends Component {
 
 renderScene(route,navigator){
+
+if(route.name == 'paynow'){
+      return <PayNow  navigator={navigator} />
+}
+
 if(route.name == 'mainScreen'){
       return <Main  navigator={navigator} />
 }
@@ -48,6 +55,9 @@ configureScene(route){
     case 'forgotPassword':
       return Navigator.SceneConfigs.FloatFromBottom
     case 'welcomeScreen':
+      return Navigator.SceneConfigs.FloatFromBottom
+
+    case 'paynow':
       return Navigator.SceneConfigs.FloatFromBottom
     
     default : 

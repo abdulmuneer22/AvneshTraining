@@ -14,6 +14,7 @@ import {
 import Button from './Components/Button'
 import StatusBar from './Components/StatusBar'
 
+
 const window = Dimensions.get('window');
 class Main extends Component {
     constructor(){
