@@ -11,7 +11,10 @@ import {
   Image,
   ScrollView
 } from 'react-native';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Styles from '../Styles/welcomeScreenStyle'
+
 
 
 const window = Dimensions.get('window');
@@ -19,16 +22,13 @@ const wrapperheight = window.height -80
 const bottomheight = window.height - wrapperheight
 import StatusBar from '../Components/StatusBar'
 
+
 class WelcomeScreen extends Component{
     render(){
         return(
             <View>
 
-                <ScrollView style={{
-                    backgroundColor : '#f4f5f7',
-                    height : wrapperheight
-                
-                }}>
+                <ScrollView style={Styles.container}>
                 <View style={{marginTop : 20,alignItems : 'center',flexDirection : 'row'}}>
                 <View style={{
                 alignItems : 'center',
@@ -51,15 +51,15 @@ class WelcomeScreen extends Component{
 
 
             <View>
-                    
+
 
                     <View>
-                    
+
                     <Text style={{
                         textAlign : 'center',
-                        
 
-                        //backgroundColor : '#eff1f4', 
+
+                        //backgroundColor : '#eff1f4',
                     //height : 20,
                     margin :10,
                     borderColor : '#eff1f4',
@@ -67,19 +67,19 @@ class WelcomeScreen extends Component{
                     }}>Your Current Balanc is 47474 on Dec 2016</Text>
 
                     <View style={{
-                    backgroundColor : '#eff1f4', 
+                    backgroundColor : '#eff1f4',
                     height : 150,
                     margin :10,
                     borderColor : '#eff1f4',
                     borderRadius : 2,
-                    
+
                     flexDirection : 'row'
 
                     }}>
-                    
+
 
                     <View style={{
-                    backgroundColor : '#eff1f4', 
+                    backgroundColor : '#eff1f4',
                     //height : 150,
                     //margin :10,
                     borderColor : '#eff1f4',
@@ -87,7 +87,7 @@ class WelcomeScreen extends Component{
                     padding : 20,
                     flex : 1,
                     alignItems :'center'
-                    
+
 
                     }}>
 
@@ -98,19 +98,19 @@ class WelcomeScreen extends Component{
                         borderRadius : 70/2,
                         alignItems : 'center',
                         justifyContent : 'center',
-                       
+
                     }}
                     onPress={()=>{this.props.navigator.push({name : 'paynow'})}}
                     >
                     <Icon name= 'attach-money' size={40} color="white"/>
-                    
+
                     </TouchableOpacity>
                     <Text>Pay Now</Text>
-                    
+
                     </View>
 
                     <View style={{
-                    backgroundColor : '#eff1f4', 
+                    backgroundColor : '#eff1f4',
                     //height : 150,
                     //margin :10,
                     borderColor : '#eff1f4',
@@ -118,7 +118,7 @@ class WelcomeScreen extends Component{
                     padding : 20,
                     flex : 1,
                     alignItems :'center'
-                    
+
 
                     }}>
                     <View style={{
@@ -129,7 +129,7 @@ class WelcomeScreen extends Component{
                         alignItems : 'center',
                         justifyContent : 'center',
                         borderColor : 'purple'
-                       
+
                     }}>
                     <Icon name= 'credit-card' size={40} color="white" />
                     </View>
@@ -137,7 +137,7 @@ class WelcomeScreen extends Component{
                     </View>
 
                     <View style={{
-                    backgroundColor : '#eff1f4', 
+                    backgroundColor : '#eff1f4',
                     //height : 150,
                     //margin :10,
                     borderColor : '#eff1f4',
@@ -145,8 +145,8 @@ class WelcomeScreen extends Component{
                     padding : 20,
                     flex : 1,
                     alignItems :'center'
-                    
-                    
+
+
 
                     }}>
 
@@ -158,14 +158,14 @@ class WelcomeScreen extends Component{
                         alignItems : 'center',
                         justifyContent : 'center',
                         borderColor : 'purple'
-                       
+
                     }}>
                     <Icon name= 'healing' size={65} color="white" />
                     </View>
                     <Text>Care Plan</Text>
                     </View>
-                    
-                    
+
+
                     </View>
 
                     </View>
@@ -176,13 +176,13 @@ class WelcomeScreen extends Component{
 
 
             <View style={{flexDirection : 'row',justifyContent : 'center'}}>
-                    
+
                     <View style ={{flex : 1,alignItems : 'center'}}>
                     <Text style={{fontSize : 30}}>$3220</Text>
                     <Text>of $3220</Text>
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
-                    
-                    
+
+
                     <Text style = {{textAlign :'center'}}>Deductable Details</Text>
                     </View>
 
@@ -190,8 +190,8 @@ class WelcomeScreen extends Component{
                     <Text style={{fontSize : 30}}>$3220</Text>
                     <Text>of $3220</Text>
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
-                    
-                    
+
+
                     <Text style = {{textAlign :'center'}}>FSA Transactions</Text>
                     </View>
             </View>
@@ -207,7 +207,7 @@ class WelcomeScreen extends Component{
                     resizeMode = {Image.resizeMode.contain}
 
                     />
-                    
+
             </View>
 
 
@@ -218,7 +218,7 @@ class WelcomeScreen extends Component{
                 flexDirection : 'row',
                 paddingLeft : 10,
                 paddingRight : 10
-                
+
             }}>
 
 
@@ -226,7 +226,7 @@ class WelcomeScreen extends Component{
                     flex :1,
                     padding : 10,
                     paddingBottom : 10
-                    
+
                     }}>
                     <TouchableOpacity
                     underlayColor = {'#efefef'}
@@ -241,7 +241,7 @@ class WelcomeScreen extends Component{
                     flex :1,
                     padding : 10,
                     paddingBottom : 10
-                    
+
                     }}>
                     <TouchableOpacity
                     underlayColor = {'#efefef'}
@@ -256,7 +256,7 @@ class WelcomeScreen extends Component{
                     flex :1,
                     padding : 10,
                     paddingBottom : 10
-                    
+
                     }}>
                     <TouchableOpacity
                     underlayColor = {'#efefef'}
@@ -272,7 +272,7 @@ class WelcomeScreen extends Component{
                     flex :1,
                     padding : 10,
                     paddingBottom : 10
-                    
+
                     }}>
                     <TouchableOpacity
                     underlayColor = {'#efefef'}
@@ -282,16 +282,19 @@ class WelcomeScreen extends Component{
                     <Text style={{color : 'white',textAlign : 'center'}}>More ..</Text>
                     </TouchableOpacity>
             </View>
-            
 
-                
-              
+
+
+
             </View>
 
             </View>
             )
     }
 }
+
+
+
 
 
 export default WelcomeScreen

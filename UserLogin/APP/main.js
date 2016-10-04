@@ -13,6 +13,8 @@ import {
 
 import Button from './Components/Button'
 import StatusBar from './Components/StatusBar'
+import Styles from './Styles/SharedStyles'
+
 
 
 const window = Dimensions.get('window');
@@ -38,25 +40,27 @@ handleChildFunc(){
         <View style={{
             backgroundColor : '#0184ba',
             flex : 1,
-           
+
         }}>
 
-        
-        
+
+
         <View style={{
             alignItems : 'center',
             marginTop : 0
-           
+
         }}>
 
-        
 
-        
+
+
         <View style={{marginTop : 20,marginBottom : 40}}>
         <Text style={{
         fontSize : 40,
         color : 'white'
-        }}>Florida Blue</Text>
+        }}>
+        Florida Blue
+        </Text>
         </View>
 
 
@@ -68,7 +72,7 @@ handleChildFunc(){
         }}>
 
         <TextInput
-        
+
         style={{
         alignItems : 'center',
         alignSelf : 'center',
@@ -80,16 +84,16 @@ handleChildFunc(){
         placeholder="User Name"
         onChangeText = {(text) => {
             this.setState({userName:text})
-            
+
         }}
         value={this.state.userName}
 
         />
 
 
-        
-        
-        
+
+
+
         </View>
 
         <View style={{
@@ -109,19 +113,19 @@ handleChildFunc(){
         placeholder="Password"
         onChangeText = {(text) => {
             this.setState({password:text})
-            
+
         }}
         value={this.state.password}
 
         />
 
 
-        
-        
-        
+
+
+
         </View>
 
-        
+
         <View>
          <Text style={{
             marginTop : 10,
@@ -130,19 +134,19 @@ handleChildFunc(){
         }}>{this.state.error}</Text>
         </View>
 
-        
-        
+
+
         <View
         style ={{
             marginTop : 30,
             //borderColor : 'black',
             //borderWidth : 1,
             flexDirection : 'row'
-            
+
         }}
-        
+
         >
-        
+
 
 
         <TouchableOpacity
@@ -155,11 +159,11 @@ handleChildFunc(){
                             this.props.navigator.push({name : 'welcomeScreen'})
                         }else{
                         this.setState({error: "Invalid User Name Or Password"})
-                            
+
                         }
 
 
-                        
+
                     }
                 }}
                 style={{
@@ -175,9 +179,9 @@ handleChildFunc(){
                             marginBottom :10,
                             marginTop : 10,
                             flex : 1
-                           
+
                 }}
-                
+
                 >
                 <Text style={{
                             fontSize : 16,
@@ -205,9 +209,9 @@ handleChildFunc(){
                             marginBottom :10,
                             marginTop : 10,
                             flex : 1
-                           
+
                 }}
-                
+
                 >
                 <Text style={{
                             fontSize : 16,
@@ -216,13 +220,13 @@ handleChildFunc(){
                 }}>Clear</Text>
                 </TouchableOpacity>
         </View>
-        
-        
+
+
         </View>
 
 
-        
-        
+
+
 
         <View style={{flexDirection : 'row',marginTop :10}}>
         <Text style={{
@@ -235,9 +239,9 @@ handleChildFunc(){
             onPress={()=>{this.props.navigator.push({name : 'register'})}}
             >
             Register
-    
-        </Text>
 
+        </Text>
+        
         <Text style={{
             color : 'white',
             alignSelf : 'flex-end',
@@ -250,7 +254,7 @@ handleChildFunc(){
         </View>
 
         </View>
-        
+
 
         </View>
 
@@ -262,5 +266,11 @@ handleChildFunc(){
 
 }
 
-
+/*
+const Styles = StyleSheet.create({
+  textOutput : {
+    color : 'red'
+  }
+})
+*/
 export default Main
