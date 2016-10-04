@@ -13,7 +13,7 @@ import {
 
 import Button from './Components/Button'
 import StatusBar from './Components/StatusBar'
-import Styles from './Styles/SharedStyles'
+import styles from './Styles/mainStyle'
 
 
 
@@ -37,11 +37,7 @@ handleChildFunc(){
     render(){
 
     return(
-        <View style={{
-            backgroundColor : '#0184ba',
-            flex : 1,
-
-        }}>
+        <View style={styles.container}>
 
 
 
@@ -50,44 +46,29 @@ handleChildFunc(){
             marginTop : 0
 
         }}>
-
+        
 
 
 
         <View style={{marginTop : 20,marginBottom : 40}}>
-        <Text style={{
-        fontSize : 40,
-        color : 'white'
-        }}>
-        Florida Blue
-        </Text>
+        
+        <Text style={styles.logo}>Florida</Text>
+
         </View>
 
 
         <View>
 
 
-        <View style={{
-        marginTop : 20,backgroundColor : 'white',padding : 5
-        }}>
+        <View style={styles.userInputWrapper}>
 
         <TextInput
-
-        style={{
-        alignItems : 'center',
-        alignSelf : 'center',
-        width : window.width*0.7,
-        height : 40,
-        color : 'black'
-
-        }}
+        style={styles.userInput}
         placeholder="User Name"
         onChangeText = {(text) => {
-            this.setState({userName:text})
-
+        this.setState({userName:text})
         }}
         value={this.state.userName}
-
         />
 
 
@@ -96,42 +77,23 @@ handleChildFunc(){
 
         </View>
 
-        <View style={{
-        marginTop : 20,backgroundColor : 'white',padding : 5
-        }}>
+        <View style={styles.userInputWrapper}>
 
         <TextInput
         secureTextEntry={true}
-        style={{
-        alignItems : 'center',
-        alignSelf : 'center',
-        width : window.width*0.7,
-        height : 40,
-        color : 'black'
-
-        }}
+        style={styles.userInput}
         placeholder="Password"
         onChangeText = {(text) => {
-            this.setState({password:text})
-
+        this.setState({password:text})
         }}
         value={this.state.password}
-
         />
-
-
-
-
 
         </View>
 
 
         <View>
-         <Text style={{
-            marginTop : 10,
-            color : 'orange',
-            fontSize : 16
-        }}>{this.state.error}</Text>
+         <Text style={styles.errorMessage}>{this.state.error}</Text>
         </View>
 
 
@@ -139,8 +101,6 @@ handleChildFunc(){
         <View
         style ={{
             marginTop : 30,
-            //borderColor : 'black',
-            //borderWidth : 1,
             flexDirection : 'row'
 
         }}
@@ -166,28 +126,10 @@ handleChildFunc(){
 
                     }
                 }}
-                style={{
-                            flexDirection : 'column',
-                            alignItems : 'center',
-                            //width: (window.width * 0.70/2),
-                            backgroundColor : 'white',
-                            height : 45,
-                            borderColor : 'white',
-                            borderWidth : 6,
-                            borderRadius : 0.5,
-                            justifyContent : 'center',
-                            marginBottom :10,
-                            marginTop : 10,
-                            flex : 1
-
-                }}
+                style={styles.leftbutton}
 
                 >
-                <Text style={{
-                            fontSize : 16,
-                            fontWeight : 'bold',
-                            color : 'black'
-                }}>Login</Text>
+                <Text style={styles.buttonText}>Login</Text>
                 </TouchableOpacity>
 
 
@@ -196,28 +138,10 @@ handleChildFunc(){
         }}>
         <TouchableOpacity
                 onPress={()=>{this.setState({userName : '', password : ''})}}
-                style={{
-                            flexDirection : 'column',
-                            alignItems : 'center',
-                            //width: (window.width * 0.70/2),
-                            backgroundColor : 'white',
-                            height : 45,
-                            borderColor : 'white',
-                            borderWidth : 6,
-                            borderRadius : 0.5,
-                            justifyContent : 'center',
-                            marginBottom :10,
-                            marginTop : 10,
-                            flex : 1
-
-                }}
+                style={styles.rightbutton}
 
                 >
-                <Text style={{
-                            fontSize : 16,
-                            fontWeight : 'bold',
-                            color : 'black'
-                }}>Clear</Text>
+                <Text style={styles.buttonText}>Clear</Text>
                 </TouchableOpacity>
         </View>
 
@@ -229,28 +153,19 @@ handleChildFunc(){
 
 
         <View style={{flexDirection : 'row',marginTop :10}}>
-        <Text style={{
-            color : 'white',
-            alignSelf : 'flex-start',
-            //marginLeft : 50,
-            flex : 1,
-            textAlign : 'left'
-            }}
+        <Text style={styles.register}
             onPress={()=>{this.props.navigator.push({name : 'register'})}}
             >
             Register
 
         </Text>
         
-        <Text style={{
-            color : 'white',
-            alignSelf : 'flex-end',
-            //marginRight : 60,
-            flex : 1,
-            textAlign : 'right'
-            }}
+        <TouchableHighlight
             onPress={()=>{this.props.navigator.push({name : 'forgotPassword'})}}
+        >
+        <Text style={styles.forgotPassword}
             >Forgot Password ?</Text>
+        </TouchableHighlight>
         </View>
 
         </View>
@@ -266,11 +181,7 @@ handleChildFunc(){
 
 }
 
-/*
-const Styles = StyleSheet.create({
-  textOutput : {
-    color : 'red'
-  }
-})
-*/
+
+
+
 export default Main

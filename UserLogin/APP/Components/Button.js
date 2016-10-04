@@ -10,6 +10,7 @@ import {
   
 } from 'react-native';
 const window = Dimensions.get('window');
+import Styles from './ButtonStyle'
 
 
 class Button extends Component{
@@ -32,27 +33,12 @@ onPressButton(){
 
                 <TouchableOpacity
                 onPress={this.onPressButton.bind(this)}
-                style={{
-                            flexDirection : 'column',
-                            alignItems : 'center',
-                            //width: (window.width * 0.70/2),
-                            backgroundColor : 'white',
-                            height : 45,
-                            borderColor : 'white',
-                            borderWidth : 6,
-                            borderRadius : 0.5,
-                            justifyContent : 'center',
-                            marginBottom :10,
-                            marginTop : 10,
-                            flex : 1
-                           
-                }}
-                
+                style={Styles.button}
                 >
                 <Text style={{
                             fontSize : 16,
                             fontWeight : 'bold',
-                            color : 'black'
+                            color : 'red'
                 }}>{this.state.ButtonText}</Text>
                 </TouchableOpacity>
 

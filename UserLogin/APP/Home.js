@@ -15,6 +15,8 @@ import ForgotPassword from './Containers/ForgotPassword'
 import Register from './Containers/Register'
 import WelcomeScreen from './Containers/WelcomeScreen'
 import PayNow from './Containers/PayNow'
+import MyCard from './Containers/MyCard'
+
 
 
 
@@ -44,6 +46,10 @@ if(route.name == 'register'){
 if(route.name == 'welcomeScreen'){
       return <WelcomeScreen  navigator={navigator} />
 }
+if(route.name == 'mycard'){
+      return <MyCard  navigator={navigator} />
+}
+mycard
 
 }
 
@@ -58,6 +64,9 @@ configureScene(route){
       return Navigator.SceneConfigs.FloatFromBottom
 
     case 'paynow':
+      return Navigator.SceneConfigs.FloatFromBottom
+
+    case 'mycard':
       return Navigator.SceneConfigs.FloatFromBottom
     
     default : 

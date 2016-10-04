@@ -14,19 +14,16 @@ import UserInput from '../Components/UserInput'
 import Button from '../Components/Button'
 import StatusBar from '../Components/StatusBar'
 
+import styles from '../Styles/ForgotPasswordStyle';
+
+
+
+
 
 class ForgotPasword extends Component{
     render(){
         return(
-        <View style={{
-            backgroundColor : '#0184ba',
-            flex : 1,
-            alignItems : 'center',
-            //justifyContent : 'center'
-            flexDirection : 'column'
-
-
-        }}>
+        <View style={styles.container}>
 
         <StatusBar leftIcon='chevron-left' title="Forgot Pasword" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 
@@ -40,6 +37,8 @@ class ForgotPasword extends Component{
         
         
         <View style={{flexDirection : 'row'}}>
+
+        
         <TouchableOpacity
                 style={{
                             flexDirection : 'column',

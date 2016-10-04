@@ -29,6 +29,7 @@ class WelcomeScreen extends Component{
             <View>
 
                 <ScrollView style={Styles.container}>
+                
                 <View style={{marginTop : 20,alignItems : 'center',flexDirection : 'row'}}>
                 <View style={{
                 alignItems : 'center',
@@ -121,7 +122,7 @@ class WelcomeScreen extends Component{
 
 
                     }}>
-                    <View style={{
+                    <TouchableOpacity style={{
                         backgroundColor : 'purple',
                         width : 70,
                         height : 70,
@@ -130,9 +131,12 @@ class WelcomeScreen extends Component{
                         justifyContent : 'center',
                         borderColor : 'purple'
 
-                    }}>
+                    }}
+                    onPress={()=>{this.props.navigator.push({name : 'mycard'})}}
+                    
+                    >
                     <Icon name= 'credit-card' size={40} color="white" />
-                    </View>
+                    </TouchableOpacity>
                     <Text>My Card</Text>
                     </View>
 
