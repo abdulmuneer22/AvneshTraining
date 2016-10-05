@@ -40,6 +40,14 @@ class StatusBar extends Component{
 
             case 'My Card':
             this.props.navigator.pop()
+
+            case 'Welcome Screen':
+            this.props.navigator.pop()
+
+            case 'Deductables':
+            this.props.navigator.pop()
+
+
         
         default : 
             console.log('menu button')

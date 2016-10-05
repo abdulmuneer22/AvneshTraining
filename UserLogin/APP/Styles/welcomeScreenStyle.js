@@ -1,25 +1,35 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
 
-const window = Dimensions.get('window');
-const wrapperheight = window.height -80
-const bottomheight = window.height - wrapperheight
+'use strict';
 
+var React = require('react-native');
 
-const Styles = StyleSheet.create({
-  container : {
-    backgroundColor : '#f4f5f7',
-    height : wrapperheight
+var { StyleSheet } = React;
+var Dimensions=require('Dimensions');
+var windowSize=Dimensions.get('window');
 
-  },
-
-
+module.exports = StyleSheet.create({
   
-})
+  logoWrapper : {
+    marginTop : 20,
+    alignItems : 'center',
+    flexDirection : 'row'
+  },
+  logoTextContainer : {
+    alignItems : 'center',
+    flex : 8,
+    justifyContent : 'center'
+  },
+  logo : {
+    fontSize : 40,
+    color : '#2196F3'
+  },
+  helpBubble : {
+      flex : 1,
+      alignItems :'flex-end',
+      paddingRight : 10,
+      
+  }
 
 
-module.export = Styles
+
+});

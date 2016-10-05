@@ -18,6 +18,7 @@ module.exports = StyleSheet.create({
     logo : {
       fontSize : 40,
       color : 'white',
+      fontStyle : 'italic'
     },
     userInputWrapper : {
       marginTop : 20,

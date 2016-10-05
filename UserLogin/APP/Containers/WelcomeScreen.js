@@ -13,9 +13,8 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Styles from '../Styles/welcomeScreenStyle'
-
-
+import styles from '../Styles/welcomeScreenStyle'
+import TabBarNavigator from '../Components/TabBarNavigator'
 
 const window = Dimensions.get('window');
 const wrapperheight = window.height -80
@@ -26,30 +25,44 @@ import StatusBar from '../Components/StatusBar'
 class WelcomeScreen extends Component{
     render(){
         return(
-            <View>
+            
+            
+           <View style={{flex :1}}>
+            <StatusBar leftIcon='menu' title="Welcome Screen" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
+           
+           
+           <ScrollView>
+           
+           <View>
 
-                <ScrollView style={Styles.container}>
+
+
+           </View>
+
+           <View>
+
+           <View style={styles.logoWrapper}>
                 
-                <View style={{marginTop : 20,alignItems : 'center',flexDirection : 'row'}}>
-                <View style={{
-                alignItems : 'center',
-                flex : 8,
-                justifyContent : 'center'
-                }}>
-                <Text style={{fontSize : 40,
-                color : '#2196F3'}}>
+                <View style={styles.logoTextContainer}>
+
+                <Text style={styles.logo}>
                 Florida Blue
                 </Text>
+                
                 </View>
-                <TouchableOpacity style={{flex : 1,alignItems :'flex-end'}} onPress={()=>{alert("pressed chat bubble")}}>
-                <Icon name= 'chat-bubble' size={40} color="blue"/>
+
+
+                <TouchableOpacity style={styles.helpBubble} 
+                onPress={()=>{alert("Please Contact Us On 18000-Customer-Care")}}>
+
+                <Text style={{fontSize :40}}>?</Text>
+
                 </TouchableOpacity>
-                </View>
+
+            </View>
 
             <Text style={{fontSize : 20,textAlign : 'center', marginBottom : 10}}>Welcom Back John!</Text>
             <View style={{borderBottomColor : 'grey',borderBottomWidth : 1}}></View>
-
-
 
             <View>
 
@@ -169,24 +182,23 @@ class WelcomeScreen extends Component{
                     <Text>Care Plan</Text>
                     </View>
 
+                    
+                    
 
                     </View>
 
-                    </View>
-
-
-
-            </View>
-
-
-            <View style={{flexDirection : 'row',justifyContent : 'center'}}>
+                    <View>
+                    <View style={{flexDirection : 'row',justifyContent : 'center'}}>
 
                     <View style ={{flex : 1,alignItems : 'center'}}>
-                    <Text style={{fontSize : 30}}>$3220</Text>
-                    <Text>of $3220</Text>
+                    <TouchableHighlight
+                    onPress={()=>{this.props.navigator.push({name:'deductable'})}}
+                    >
+                    <Text style={{fontSize : 30}}>
+                    $3220
+                    </Text>
+                    </TouchableHighlight>
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
-
-
                     <Text style = {{textAlign :'center'}}>Deductable Details</Text>
                     </View>
 
@@ -198,9 +210,10 @@ class WelcomeScreen extends Component{
 
                     <Text style = {{textAlign :'center'}}>FSA Transactions</Text>
                     </View>
-            </View>
+                    
+                    </View>
 
-            <View>
+
                     <Image
                     style = {{
                     width : 400,
@@ -210,89 +223,34 @@ class WelcomeScreen extends Component{
                     source={require('./resources/weather.png')}
                     resizeMode = {Image.resizeMode.contain}
 
-                    />
-
-            </View>
+                    />  
 
 
-            </ScrollView>
-            <View style={{
-                backgroundColor : 'skyblue',
-                height : bottomheight,
-                flexDirection : 'row',
-                paddingLeft : 10,
-                paddingRight : 10
+                    </View>
 
-            }}>
-
-
-            <View style={{
-                    flex :1,
-                    padding : 10,
-                    paddingBottom : 10
-
-                    }}>
-                    <TouchableOpacity
-                    underlayColor = {'#efefef'}
-                    style={{alignItems : 'center'}}
-                    >
-                    <Icon name={'home'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>Home</Text>
-                    </TouchableOpacity>
-            </View>
-
-             <View style={{
-                    flex :1,
-                    padding : 10,
-                    paddingBottom : 10
-
-                    }}>
-                    <TouchableOpacity
-                    underlayColor = {'#efefef'}
-                    style={{alignItems : 'center'}}
-                    >
-                    <Icon name={'navigation'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>Drop Locator</Text>
-                    </TouchableOpacity>
-            </View>
-
-            <View style={{
-                    flex :1,
-                    padding : 10,
-                    paddingBottom : 10
-
-                    }}>
-                    <TouchableOpacity
-                    underlayColor = {'#efefef'}
-                    style={{alignItems : 'center'}}
-                    >
-                    <Icon name={'local-taxi'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>Find Ride</Text>
-                    </TouchableOpacity>
-            </View>
-
-
-            <View style={{
-                    flex :1,
-                    padding : 10,
-                    paddingBottom : 10
-
-                    }}>
-                    <TouchableOpacity
-                    underlayColor = {'#efefef'}
-                    style={{alignItems : 'center'}}
-                    >
-                    <Icon name={'more'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>More ..</Text>
-                    </TouchableOpacity>
-            </View>
-
+                    </View>
 
 
 
             </View>
 
-            </View>
+
+
+
+
+           </View>
+           
+          
+
+
+           </ScrollView>
+
+           <TabBarNavigator navigator={this.props.navigator}/>
+            
+
+           </View>
+
+            
             )
     }
 }

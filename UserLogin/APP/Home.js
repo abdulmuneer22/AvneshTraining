@@ -14,6 +14,8 @@ import Main from './main'
 import ForgotPassword from './Containers/ForgotPassword'
 import Register from './Containers/Register'
 import WelcomeScreen from './Containers/WelcomeScreen'
+import Deductable from './Containers/Deductables'
+
 import PayNow from './Containers/PayNow'
 import MyCard from './Containers/MyCard'
 
@@ -49,7 +51,11 @@ if(route.name == 'welcomeScreen'){
 if(route.name == 'mycard'){
       return <MyCard  navigator={navigator} />
 }
-mycard
+
+if(route.name == 'deductable'){
+      return <Deductable  navigator={navigator} />
+}
+
 
 }
 
@@ -68,6 +74,7 @@ configureScene(route){
 
     case 'mycard':
       return Navigator.SceneConfigs.FloatFromBottom
+
     
     default : 
       return Navigator.SceneConfigs.FloatFromBottom
@@ -80,7 +87,7 @@ render(){
     return(
             
             <Navigator
-            initialRoute={{name: 'mainScreen'}}
+            initialRoute={{name: 'welcomeScreen'}}
             renderScene={this.renderScene.bind(this)}
             //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
             configureScene={this.configureScene.bind(this)}
