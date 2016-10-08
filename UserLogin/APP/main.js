@@ -29,6 +29,17 @@ class Main extends Component {
         }
     }
 
+
+userValidation(){
+var userName =  this.state.userName
+var password =  this.state.password
+if(!userName | !password){
+alert("Please Enter A User Name And Password")
+}else{
+this.props.navigator.push({name: 'welcomeScreen'})  
+}
+}
+
 handleChildFunc(){
     //this.setState({userName : '',password :''})
     alert("test")
@@ -110,22 +121,7 @@ handleChildFunc(){
 
 
         <TouchableOpacity
-                onPress={()=>{
-                    if(!this.state.userName | !this.state.password){
-                        //alert("No User")
-                        this.setState({error: "Please Enter User Name and Password"})
-                    }else{
-                        if(this.state.userName == 'member' && this.state.password == '1234'){
-                            this.props.navigator.push({name : 'welcomeScreen'})
-                        }else{
-                        this.setState({error: "Invalid User Name Or Password"})
-
-                        }
-
-
-
-                    }
-                }}
+                onPress={this.userValidation.bind(this)}
                 style={styles.leftbutton}
 
                 >

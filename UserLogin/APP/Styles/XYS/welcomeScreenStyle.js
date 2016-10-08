@@ -12,7 +12,7 @@ const bottomheight = window.height - wrapperheight
 
 const Styles = StyleSheet.create({
   container : {
-    backgroundColor : '#f4f5f7',
+    backgroundColor : 'green',
     height : wrapperheight
 
   },

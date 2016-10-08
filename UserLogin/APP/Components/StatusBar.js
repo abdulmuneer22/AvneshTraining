@@ -31,18 +31,21 @@ class StatusBar extends Component{
         switch(routeName){
             case 'Forgot Pasword':
             this.props.navigator.pop()
+            break;
 
             case 'Register':
             this.props.navigator.pop()
+            break;
 
             case 'Pay Now':
             this.props.navigator.pop()
-
+            break;
+            
             case 'My Card':
             this.props.navigator.pop()
+            break;
 
-            case 'Welcome Screen':
-            this.props.navigator.pop()
+            
 
             case 'Deductables':
             this.props.navigator.pop()

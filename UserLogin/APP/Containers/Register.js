@@ -20,7 +20,19 @@ class Register extends Component {
 
 
     render(){
+    
 
+    /* {...this.props is used to wrap all the props 
+        available in the Component into one 
+        props
+
+        so which is available on child Component as {this.props.somevalue}
+
+        
+        
+    }
+
+    */
     return(
         <View style={{
             backgroundColor : '#0184ba',
@@ -28,7 +40,10 @@ class Register extends Component {
            
         }}>
 
-        <StatusBar leftIcon='chevron-left' title="Register" StatusBarColor="#00BCD4" {...this.props}/>
+        <StatusBar 
+        leftIcon='chevron-left' 
+        title="Register" 
+        StatusBarColor="#00BCD4" {...this.props}/>
         
         <View style={{
             alignItems : 'center',

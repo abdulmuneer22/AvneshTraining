@@ -1,3 +1,5 @@
+//Importing react native specic libraries
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,20 +14,32 @@ import {
   ScrollView
 } from 'react-native';
 
+//Importing custom made Native Module ToastAndroid
+
+import ToastAndroid from './Toast/maketoast';
+
+// Importing ICON from react-native-vector-icons ;
+// refer to package.json for complete list of dependacies
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
+// Styles are seperated from APP Logic , Available on APP/Styles folder
 import styles from '../Styles/welcomeScreenStyle'
+
+
 import TabBarNavigator from '../Components/TabBarNavigator'
 
+// Using Dimensions library from react native to messure window width and height
 const window = Dimensions.get('window');
 const wrapperheight = window.height -80
 const bottomheight = window.height - wrapperheight
+// Custom made StatusBar is used and imported from ../Components/StatusBar
 import StatusBar from '../Components/StatusBar'
 
 
 class WelcomeScreen extends Component{
     render(){
+        //returning JSX Component to render on the Screen
         return(
-            
             
            <View style={{flex :1}}>
             <StatusBar leftIcon='menu' title="Welcome Screen" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
@@ -53,7 +67,10 @@ class WelcomeScreen extends Component{
 
 
                 <TouchableOpacity style={styles.helpBubble} 
-                onPress={()=>{alert("Please Contact Us On 18000-Customer-Care")}}>
+                onPress={()=>{
+                    // On Press function inovked when pressed on "?" 
+                    alert("Please Contact Us On 18000-Customer-Care")}
+                }>
 
                 <Text style={{fontSize :40}}>?</Text>
 
@@ -114,7 +131,11 @@ class WelcomeScreen extends Component{
                         justifyContent : 'center',
 
                     }}
-                    onPress={()=>{this.props.navigator.push({name : 'paynow'})}}
+                    onPress={()=>{
+                        // Navigated to paynow page on click
+                        this.props.navigator.push({name : 'paynow'}
+                        )
+                    }}
                     >
                     <Icon name= 'attach-money' size={40} color="white"/>
 
@@ -145,7 +166,10 @@ class WelcomeScreen extends Component{
                         borderColor : 'purple'
 
                     }}
-                    onPress={()=>{this.props.navigator.push({name : 'mycard'})}}
+                    onPress={()=>{
+                        // Navigated to paynow mycard on click
+                        this.props.navigator.push({name : 'mycard'})
+                    }}
                     
                     >
                     <Icon name= 'credit-card' size={40} color="white" />
@@ -167,7 +191,7 @@ class WelcomeScreen extends Component{
 
                     }}>
 
-                    <View style={{
+                    <TouchableHighlight style={{
                         backgroundColor : '#c1077a',
                         width : 70,
                         height : 70,
@@ -176,9 +200,14 @@ class WelcomeScreen extends Component{
                         justifyContent : 'center',
                         borderColor : 'purple'
 
-                    }}>
+                    }}
+                    onPress={()=>{
+                        //alert("test")
+                        ToastAndroid.show('Super !!!', ToastAndroid.SHORT);
+                    }}
+                    >
                     <Icon name= 'healing' size={65} color="white" />
-                    </View>
+                    </TouchableHighlight>
                     <Text>Care Plan</Text>
                     </View>
 
@@ -203,13 +232,17 @@ class WelcomeScreen extends Component{
                     </View>
 
                     <View style ={{flex : 1,alignItems : 'center'}}>
-                    <Text style={{fontSize : 30}}>$3220</Text>
-                    <Text>of $3220</Text>
+                    <TouchableHighlight
+                    onPress={()=>{this.props.navigator.push({name:'deductable'})}}
+                    >
+                    <Text style={{fontSize : 30}}>
+                    $3220
+                    </Text>
+                    </TouchableHighlight>
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
-
-
-                    <Text style = {{textAlign :'center'}}>FSA Transactions</Text>
+                    <Text style = {{textAlign :'center'}}>Deductable Details</Text>
                     </View>
+                    
                     
                     </View>
 
@@ -258,5 +291,5 @@ class WelcomeScreen extends Component{
 
 
 
-
+// exporting the clas as WelcomeScreen so it can be used in other classes
 export default WelcomeScreen

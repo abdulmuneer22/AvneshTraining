@@ -2,6 +2,10 @@ package com.userlogin;
 
 import android.app.Application;
 import android.util.Log;
+//importing from toast maker to register the module
+import com.userlogin.ToastMakerAPP;
+
+// using bridges from react native to convert Native Modules as JS Moduls
 
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -21,11 +25,16 @@ public class MainApplication extends Application implements ReactApplication {
       return BuildConfig.DEBUG;
     }
 
+    /*
+    Mention the custom module name in getPackages() method
+    */
+    
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new VectorIconsPackage()
+            new VectorIconsPackage(),
+            new ToastMakerAPP()
       );
     }
   };

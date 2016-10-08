@@ -33,7 +33,7 @@ class ForgotPasword extends Component{
 
         <View style={{justifyContent : 'center',marginTop : 50}}>
 
-        <UserInput displayText="Enter Your Registered Email" check = ""{...this.props}/>
+        <UserInput displayText="Enter Your Registered Email" {...this.props}/>
         
         
         <View style={{flexDirection : 'row'}}>

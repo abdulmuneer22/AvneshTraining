@@ -1,6 +1,7 @@
 package com.userlogin;
 
 import com.facebook.react.ReactActivity;
+import com.userlogin.ToastMakerAPP;
 
 public class MainActivity extends ReactActivity {
 

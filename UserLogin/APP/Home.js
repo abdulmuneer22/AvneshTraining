@@ -1,3 +1,17 @@
+/*
+Home.js is the main entry point of the application
+Navigator Component is used to manage navigation between all the screens
+initialRoute screen will decide first screen to show
+
+renderScene(route,navigator) =>
+decides which screen need to be rendered based on route.name value
+
+if , route.name = somescreen => render (somescreen)
+
+navigator Component is used to keep track of all the screen navigation
+*/
+
+
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -87,7 +101,7 @@ render(){
     return(
             
             <Navigator
-            initialRoute={{name: 'welcomeScreen'}}
+            initialRoute={{name: 'mainScreen'}}
             renderScene={this.renderScene.bind(this)}
             //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
             configureScene={this.configureScene.bind(this)}

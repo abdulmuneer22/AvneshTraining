@@ -12,7 +12,8 @@ module.exports = StyleSheet.create({
   logoWrapper : {
     marginTop : 20,
     alignItems : 'center',
-    flexDirection : 'row'
+    flexDirection : 'row',
+    
   },
   logoTextContainer : {
     alignItems : 'center',
