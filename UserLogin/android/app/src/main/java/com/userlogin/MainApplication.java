@@ -16,6 +16,7 @@ import com.facebook.react.shell.MainReactPackage;
 
 import java.util.Arrays;
 import java.util.List;
+import  com.smsmodule.CustomPackages;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -34,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
             new VectorIconsPackage(),
-            new ToastMakerAPP()
+            new ToastMakerAPP(),
+            new CustomPackages()
       );
     }
   };
