@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   PixelRatio,
   TouchableOpacity
-  
+
 } from 'react-native';
 const window = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -21,6 +21,8 @@ class StatusBar extends Component{
         this.state={
             StatusBarColor : this.props.StatusBarColor
         }
+
+        console.log(this.props.openDrawer);
 
     }
 
@@ -40,19 +42,25 @@ class StatusBar extends Component{
             case 'Pay Now':
             this.props.navigator.pop()
             break;
-            
+
             case 'My Card':
             this.props.navigator.pop()
             break;
 
-            
+            case 'Welcome Screen':
+            this.props.openDrawer()
+
+
+              break;
+
+
 
             case 'Deductables':
             this.props.navigator.pop()
 
 
-        
-        default : 
+
+        default :
             console.log('menu button')
         }
     }
@@ -60,14 +68,14 @@ class StatusBar extends Component{
 
 
     render(){
-        
+
         return(
         <View style={{
           backgroundColor : this.state.StatusBarColor,
 
           height: PixelRatio.getPixelSizeForLayoutSize(20),
-          flexDirection : 'row' 
-         
+          flexDirection : 'row'
+
 
         }}>
 
@@ -99,15 +107,15 @@ class StatusBar extends Component{
           alignSelf : 'flex-start',
           fontWeight : 'bold',
           //fontStyle : 'italic'
-          
+
         }}
         >{this.props.title}</Text>
         </View>
 
 
-       
 
-        
+
+
         </View>
             );
     }

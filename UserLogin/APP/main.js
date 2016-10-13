@@ -35,15 +35,13 @@ var userName =  this.state.userName
 var password =  this.state.password
 if(!userName | !password){
 alert("Please Enter A User Name And Password")
-}else{
-this.props.navigator.push({name: 'welcomeScreen'})  
+}
+else{
+this.props.navigator.push({name: 'welcomeScreen'})
 }
 }
 
-handleChildFunc(){
-    //this.setState({userName : '',password :''})
-    alert("test")
-}
+
 
     render(){
 
@@ -57,12 +55,12 @@ handleChildFunc(){
             marginTop : 0
 
         }}>
-        
+
 
 
 
         <View style={{marginTop : 20,marginBottom : 40}}>
-        
+
         <Text style={styles.logo}>Florida</Text>
 
         </View>
@@ -155,7 +153,7 @@ handleChildFunc(){
             Register
 
         </Text>
-        
+
         <TouchableHighlight
             onPress={()=>{this.props.navigator.push({name : 'forgotPassword'})}}
         >

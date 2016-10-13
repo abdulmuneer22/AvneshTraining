@@ -23,7 +23,8 @@ class MyCard extends Component {
         super();
         this.state={
             mobileNumber : '+910000000000',
-            msg : ''
+            msg : '',
+            focus :true
         }
     }
 
@@ -54,12 +55,15 @@ render(){
             alignItems : 'center',
             justifyContent :'center',
 
-        }}>
+        }}
+        
+        >
         <Text style = {{fontSize : 30}}>
         Send Message
         </Text>
 
         <View style={{flexDirection : 'row',padding : 20}}>
+        
         <Text style={{
             alignItems : 'center',
         alignSelf : 'center',
@@ -69,21 +73,32 @@ render(){
         justifyContent : 'center',
         
         }}>Mobile Number</Text>
-        <TextInput
         
+        <View style={{
+            borderColor :'black',
+            borderRadius : 5,
+            borderWidth : 1,
+            flex : 2,
+            
+            alignItems : 'center',
+            alignSelf : 'center',
+        }}>
+        <TextInput
+        keyboardType = 'numeric'
+        autoFocus={this.state.focus}
         style={{
-        alignItems : 'center',
-        flex :2,
-        alignSelf : 'center',
+        width : 250,
         height : 40,
         color : 'black'
         }}
-        placeholder="Password"
+        
         onChangeText = {(text) => {
         this.setState({mobileNumber:text})
         }}
         value={this.state.mobileNumber}
         />
+        </View>
+
         </View>
 
 

@@ -40,13 +40,21 @@ class WelcomeScreen extends Component{
     render(){
         //returning JSX Component to render on the Screen
         return(
-            
+
            <View style={{flex :1}}>
-            <StatusBar leftIcon='menu' title="Welcome Screen" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
-           
-           
+            <StatusBar
+            leftIcon='menu'
+            title="Welcome Screen"
+            StatusBarColor="#00BCD4"
+            navigator={this.props.navigator}
+            closeDrawer={this.props.closeDrawer}
+            openDrawer={this.props.openDrawer}
+            {...this.props}
+            />
+
+
            <ScrollView>
-           
+
            <View>
 
 
@@ -56,19 +64,19 @@ class WelcomeScreen extends Component{
            <View>
 
            <View style={styles.logoWrapper}>
-                
+
                 <View style={styles.logoTextContainer}>
 
                 <Text style={styles.logo}>
                 Florida Blue
                 </Text>
-                
+
                 </View>
 
 
-                <TouchableOpacity style={styles.helpBubble} 
+                <TouchableOpacity style={styles.helpBubble}
                 onPress={()=>{
-                    // On Press function inovked when pressed on "?" 
+                    // On Press function inovked when pressed on "?"
                     alert("Please Contact Us On 18000-Customer-Care")}
                 }>
 
@@ -170,7 +178,7 @@ class WelcomeScreen extends Component{
                         // Navigated to paynow mycard on click
                         this.props.navigator.push({name : 'mycard'})
                     }}
-                    
+
                     >
                     <Icon name= 'credit-card' size={40} color="white" />
                     </TouchableOpacity>
@@ -211,8 +219,8 @@ class WelcomeScreen extends Component{
                     <Text>Care Plan</Text>
                     </View>
 
-                    
-                    
+
+
 
                     </View>
 
@@ -242,8 +250,8 @@ class WelcomeScreen extends Component{
                     <Icon name= 'chevron-right' size={40} color="skyblue" />
                     <Text style = {{textAlign :'center'}}>Deductable Details</Text>
                     </View>
-                    
-                    
+
+
                     </View>
 
 
@@ -256,7 +264,7 @@ class WelcomeScreen extends Component{
                     source={require('./resources/weather.png')}
                     resizeMode = {Image.resizeMode.contain}
 
-                    />  
+                    />
 
 
                     </View>
@@ -272,18 +280,18 @@ class WelcomeScreen extends Component{
 
 
            </View>
-           
-          
+
+
 
 
            </ScrollView>
 
            <TabBarNavigator navigator={this.props.navigator}/>
-            
+
 
            </View>
 
-            
+
             )
     }
 }

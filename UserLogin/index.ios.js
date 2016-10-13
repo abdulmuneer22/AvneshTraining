@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import {
@@ -12,10 +7,12 @@ import {
   View
 } from 'react-native';
 
-import Main from './APP/main.js'
+//import Main from './APP/main.js'
+import Home from './APP/Home'
 
 
 
 
 
-AppRegistry.registerComponent('UserLogin', () => Main);
+
+AppRegistry.registerComponent('UserLogin', () => Home);

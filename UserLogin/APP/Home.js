@@ -1,17 +1,3 @@
-/*
-Home.js is the main entry point of the application
-Navigator Component is used to manage navigation between all the screens
-initialRoute screen will decide first screen to show
-
-renderScene(route,navigator) =>
-decides which screen need to be rendered based on route.name value
-
-if , route.name = somescreen => render (somescreen)
-
-navigator Component is used to keep track of all the screen navigation
-*/
-
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -33,6 +19,10 @@ import Deductable from './Containers/Deductables'
 import PayNow from './Containers/PayNow'
 import MyCard from './Containers/MyCard'
 
+import Drawer from 'react-native-drawer'
+// Imported DrawerContent from APP -> Conatins all slide menu options
+import DrawerContent from './DrawerContent'
+
 
 
 
@@ -41,6 +31,21 @@ import MyCard from './Containers/MyCard'
 
 class Home extends Component {
 
+constructor(){
+    super();
+    this.state = {
+    drawerOpen: false,
+    drawerDisabled: false,
+    }
+  }
+
+  closeDrawer = () => {
+    this._drawer.close()
+  };
+  openDrawer = () => {
+    this._drawer.open()
+  };
+
 renderScene(route,navigator){
 
 if(route.name == 'paynow'){
@@ -48,7 +53,7 @@ if(route.name == 'paynow'){
 }
 
 if(route.name == 'mainScreen'){
-      return <Main  navigator={navigator} />
+      return <Main  navigator={navigator} closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} {...this.props}/>
 }
 
 if(route.name == 'forgotPassword'){
@@ -60,7 +65,7 @@ if(route.name == 'register'){
 }
 
 if(route.name == 'welcomeScreen'){
-      return <WelcomeScreen  navigator={navigator} />
+      return <WelcomeScreen  navigator={navigator} closeDrawer={this.closeDrawer} openDrawer={this.openDrawer} {...this.props}/>
 }
 if(route.name == 'mycard'){
       return <MyCard  navigator={navigator} />
@@ -89,24 +94,53 @@ configureScene(route){
     case 'mycard':
       return Navigator.SceneConfigs.FloatFromBottom
 
-    
-    default : 
+
+    default :
       return Navigator.SceneConfigs.FloatFromBottom
-    
+
 }
 }
 
 
 render(){
     return(
-            
+      <Drawer
+      ref={(ref) => this._drawer = ref}
+      type="static"
+      styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
+      onOpen={() => {
+      console.log('onopen')
+      this.setState({drawerOpen: true})
+      }}
+
+      onClose={() => {
+      console.log('onclose')
+      this.setState({drawerOpen: false})
+      }}
+
+      open={this.state.drawerOpen}
+      tweenDuration={100}
+      panThreshold={0.08}
+      disabled={this.state.drawerDisabled}
+
+      content={<DrawerContent closeDrawer={this.closeDrawer}/>}
+      openDrawerOffset={0.2}
+      panCloseMask={0.2}
+      tweenHandler={(ratio) => ({
+        main: { opacity: Math.max(0.54, 1 - ratio) }
+      })}
+      >
+
+
             <Navigator
             initialRoute={{name: 'mainScreen'}}
             renderScene={this.renderScene.bind(this)}
             //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
             configureScene={this.configureScene.bind(this)}
             />
-            
+
+      </Drawer>
+
 
     )
 }
