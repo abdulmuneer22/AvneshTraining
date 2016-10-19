@@ -65,6 +65,8 @@ class StatusBar extends Component{
         }
     }
 
+    
+
 
 
     render(){

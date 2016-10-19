@@ -30,8 +30,11 @@ import TabBarNavigator from '../Components/TabBarNavigator'
 
 // Using Dimensions library from react native to messure window width and height
 const window = Dimensions.get('window');
-const wrapperheight = window.height -80
-const bottomheight = window.height - wrapperheight
+
+
+
+//const wrapperheight = window.height -80
+//const bottomheight = window.height - wrapperheight
 // Custom made StatusBar is used and imported from ../Components/StatusBar
 import StatusBar from '../Components/StatusBar'
 
@@ -68,7 +71,7 @@ class WelcomeScreen extends Component{
                 <View style={styles.logoTextContainer}>
 
                 <Text style={styles.logo}>
-                Florida Blue
+                Welcome Page
                 </Text>
 
                 </View>
@@ -257,7 +260,7 @@ class WelcomeScreen extends Component{
 
                     <Image
                     style = {{
-                    width : 400,
+                    width : window.width,
                     height : 400,
                     alignSelf:'center'
                     }}

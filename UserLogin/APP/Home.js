@@ -108,6 +108,7 @@ render(){
       ref={(ref) => this._drawer = ref}
       type="static"
       styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
+      
       onOpen={() => {
       console.log('onopen')
       this.setState({drawerOpen: true})
@@ -119,16 +120,24 @@ render(){
       }}
 
       open={this.state.drawerOpen}
+      
       tweenDuration={100}
       panThreshold={0.08}
+
       disabled={this.state.drawerDisabled}
 
       content={<DrawerContent closeDrawer={this.closeDrawer}/>}
+
+
       openDrawerOffset={0.2}
+
       panCloseMask={0.2}
+
       tweenHandler={(ratio) => ({
         main: { opacity: Math.max(0.54, 1 - ratio) }
-      })}
+      })
+    
+      }
       >
 
 

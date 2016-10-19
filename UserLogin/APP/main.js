@@ -61,7 +61,7 @@ this.props.navigator.push({name: 'welcomeScreen'})
 
         <View style={{marginTop : 20,marginBottom : 40}}>
 
-        <Text style={styles.logo}>Florida</Text>
+        <Text style={styles.logo}>Login</Text>
 
         </View>
 

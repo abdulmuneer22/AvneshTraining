@@ -12,9 +12,11 @@ class DrawerContent extends Component {
     console.log(this.state.CloseMenu);
   }
 
+  
+
   render(){
     return(
-      <View style={{ backgroundColor : 'green'}}>
+      <View style={{ backgroundColor : 'green', height : 400}}>
       <Text>
       DrawerContent
       </Text>
