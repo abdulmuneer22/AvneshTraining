@@ -11,7 +11,8 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   Image,
-  ScrollView
+  ScrollView,
+  
 } from 'react-native';
 
 //Importing custom made Native Module ToastAndroid

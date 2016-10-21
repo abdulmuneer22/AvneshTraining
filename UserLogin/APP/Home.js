@@ -23,7 +23,7 @@ import Drawer from 'react-native-drawer'
 // Imported DrawerContent from APP -> Conatins all slide menu options
 import DrawerContent from './DrawerContent'
 
-
+import MapView from './Containers/MapView'
 
 
 
@@ -75,6 +75,10 @@ if(route.name == 'deductable'){
       return <Deductable  navigator={navigator} />
 }
 
+if(route.name == 'mapview'){
+      return <MapView  navigator={navigator} />
+}
+
 
 }
 
@@ -92,7 +96,7 @@ configureScene(route){
       return Navigator.SceneConfigs.FloatFromBottom
 
     case 'mycard':
-      return Navigator.SceneConfigs.FloatFromBottom
+      return Navigator.SceneConfigs.PushFromRight
 
 
     default :
@@ -104,7 +108,7 @@ configureScene(route){
 
 render(){
     return(
-      <Drawer
+     <Drawer
       ref={(ref) => this._drawer = ref}
       type="static"
       styles={{main: {shadowColor: '#000000', shadowOpacity: 0.3, shadowRadius: 15}}}
@@ -141,12 +145,12 @@ render(){
       >
 
 
-            <Navigator
-            initialRoute={{name: 'mainScreen'}}
-            renderScene={this.renderScene.bind(this)}
-            //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
-            configureScene={this.configureScene.bind(this)}
-            />
+      <Navigator
+      initialRoute={{name: 'mainScreen'}}
+      renderScene={this.renderScene.bind(this)}
+      //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
+      configureScene={this.configureScene.bind(this)}
+      />
 
       </Drawer>
 

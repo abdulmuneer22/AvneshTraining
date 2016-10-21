@@ -38,7 +38,7 @@ class TabBarNavigator extends Component {
                     style={{alignItems : 'center'}}
                     >
                     <Icon name={'home'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>Home</Text>
+                    
                     </TouchableOpacity>
             </View>
 
@@ -51,9 +51,14 @@ class TabBarNavigator extends Component {
                     <TouchableOpacity
                     underlayColor = {'#efefef'}
                     style={{alignItems : 'center'}}
+                    onPress = {()=>{
+                        //alert("Navigate")
+                        this.props.navigator.push({name : 'mapview'})
+                    
+                    }}
                     >
                     <Icon name={'navigation'} size={25} color="white" />
-                    <Text style={{color : 'white',textAlign : 'center'}}>Drop Locator</Text>
+                    
                     </TouchableOpacity>
             </View>
 

@@ -16,7 +16,7 @@ class DrawerContent extends Component {
 
   render(){
     return(
-      <View style={{ backgroundColor : 'green', height : 400}}>
+      <View>
       <Text>
       DrawerContent
       </Text>

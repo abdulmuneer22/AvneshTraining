@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 var windowSize=Dimensions.get('window');
 
+import MapView from 'react-native-maps';
+
 import StatusBar from '../Components/StatusBar'
 import Button from '../Components/Button'
 
