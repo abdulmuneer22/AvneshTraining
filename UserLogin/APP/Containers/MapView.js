@@ -3,10 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  Dimensions
 } from 'react-native';
 
-
+const window = Dimensions.get('window');
 //Using airbnb maps 
 //make sure to react-native link and add keys to android maniifest file
 import MapView from 'react-native-maps'
@@ -199,7 +200,7 @@ controllers : {
  Mapcontainer: {
    ...StyleSheet.absoluteFillObject,
    height: 400,
-   width: 400,
+   width: window.width,
    flex : 1,
    justifyContent: 'flex-end',
    alignItems: 'center',
