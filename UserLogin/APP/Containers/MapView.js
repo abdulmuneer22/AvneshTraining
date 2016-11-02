@@ -4,13 +4,18 @@ import {
   Text,
   View,
   TouchableHighlight,
-  Dimensions
+  Dimensions,
+  ScrollView
 } from 'react-native';
 
 const window = Dimensions.get('window');
 //Using airbnb maps 
 //make sure to react-native link and add keys to android maniifest file
 import MapView from 'react-native-maps'
+import StatusBar from '../Components/StatusBar'
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 class MapsSample extends Component {
 
@@ -34,32 +39,30 @@ class MapsSample extends Component {
 
 
 
-  componentDidMount(){
-   var watchID: ?number = null;
-    
-   navigator.geolocation.getCurrentPosition(
-      (position) => {
-        var initialPosition = JSON.stringify(position);
-        this.setState({initialPosition});
-      },
-      (error) => alert(JSON.stringify(error)),
-      {enableHighAccuracy: true, timeout: 20000, maximumAge: 1000}
-    );
-    this.watchID = navigator.geolocation.watchPosition((position) => {
-      var lastPosition = JSON.stringify(position);
-      this.setState({lastPosition});
-    });
-    
-  }
+  
   render() {
     return (
-      <View style={{flex : 1}}>
-        <View style={{flex : 4}}>
+    <View style = {{flex : 1,backgroundColor : 'white'}}>
+    <StatusBar
+            leftIcon='chevron-left'
+            title="Maps"
+            StatusBarColor="#00BCD4"
+            navigator={this.props.navigator}
+            closeDrawer={this.props.closeDrawer}
+            openDrawer={this.props.openDrawer}
+            {...this.props}
+    />
+    <ScrollView>
+      <View style={{ flex : 1}}>
+
+        <View style={{flex : 4, backgroundColor: 'red',height :400}}>
         <View style={styles.Mapcontainer}>
         <MapView
         style={styles.map}
-        
+        mapType = "satellite"
         region={this.state.mapLocation}
+        showsUserLocation = {true}
+        followsUserLocation = {true}
         >
         
 
@@ -105,39 +108,32 @@ class MapsSample extends Component {
         title = {"Doral"}
         description = {"4855 Town Center Pkwy, Jacksonville, FL 32246"}
         />
-        
-
-
-
-
-
         </MapView>
-
-        
-
-
-        </View>
+      </View>
         </View>
 
-        <View style={{flex : 2 }}>
+
+        <View style={{flex : 1,height : 500}}>
         <TouchableHighlight
+        style={{marginTop : 10}}
         onPress={()=>{
-          //alert("Working !!")
-          this.setState({
-            mapLocation : {
-              latitude: 12.9716,
-              longitude: 77.5946,
-              latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421,
-            }
+        //alert("Working !!")
+        this.setState({
+        mapLocation : {
+        latitude: 12.9716,
+        longitude: 77.5946,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+        }
 
-          })
+        })
         }}
         >
         <Text>
         Go To Client Location
         </Text>
         </TouchableHighlight>
+
 
         <TouchableHighlight
         onPress={()=>{
@@ -180,10 +176,19 @@ class MapsSample extends Component {
         <Text>{this.state.DoralDescription}</Text>
         </View>
         </TouchableHighlight>
+
+
         </View>
         
 
+
       </View>
+
+    </ScrollView>
+            
+
+    </View>
+          
 
 
     );

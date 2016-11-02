@@ -6,7 +6,8 @@ import {
   Dimensions,
   TextInput,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  BackAndroid
   
 } from 'react-native';
 var windowSize=Dimensions.get('window');
@@ -18,6 +19,7 @@ import Button from '../Components/Button'
 
 import { NativeModules } from 'react-native';
 
+var screen = 'mycard'
 
 class MyCard extends Component {
 
@@ -26,7 +28,7 @@ class MyCard extends Component {
         this.state={
             mobileNumber : '+910000000000',
             msg : '',
-            focus :true
+            //focus :true
         }
     }
 
@@ -49,13 +51,13 @@ this.state.mobileNumber,
 render(){
 
     return(
-        <View>
-
+        <View style = {{flex : 1 , backgroundColor : 'white'}}>
         <StatusBar leftIcon='chevron-left' title="My Card" StatusBarColor="#00BCD4" navigator={this.props.navigator}/>
 
         <View style={{
             alignItems : 'center',
             justifyContent :'center',
+            backgroundColor : 'white'
 
         }}
         
@@ -67,7 +69,7 @@ render(){
         <View style={{flexDirection : 'row',padding : 20}}>
         
         <Text style={{
-            alignItems : 'center',
+        alignItems : 'center',
         alignSelf : 'center',
         flex : 1,
         
@@ -137,6 +139,8 @@ render(){
 
 
         </View>
+
+        
         </View>
 
     );

@@ -7,7 +7,8 @@ import {
   Dimensions,
   TextInput,
   TouchableHighlight,
-  Navigator
+  Navigator,
+  BackAndroid
 } from 'react-native';
 
 import Main from './main'
@@ -36,6 +37,7 @@ constructor(){
     this.state = {
     drawerOpen: false,
     drawerDisabled: false,
+    initialRoute : ''
     }
   }
 
@@ -100,11 +102,19 @@ configureScene(route){
 
 
     default :
-      return Navigator.SceneConfigs.FloatFromBottom
+      return Navigator.SceneConfigs.FadeAndroid
 
 }
 }
 
+
+
+componentDidMount(route){
+  BackAndroid.addEventListener('hardwareBackPress', () => {
+    console.log(route.name)
+    return true
+  })
+}
 
 render(){
     return(
