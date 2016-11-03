@@ -72,6 +72,7 @@ this.props.navigator.push({name: 'welcomeScreen'})
         <View style={styles.userInputWrapper}>
 
         <TextInput
+        autoCapitalize = 'none'
         style={styles.userInput}
         placeholder="User Name"
         onChangeText = {(text) => {
@@ -89,6 +90,7 @@ this.props.navigator.push({name: 'welcomeScreen'})
         <View style={styles.userInputWrapper}>
 
         <TextInput
+        autoCapitalize = 'none'
         secureTextEntry={true}
         style={styles.userInput}
         placeholder="Password"

@@ -16,6 +16,7 @@ import ForgotPassword from './Containers/ForgotPassword'
 import Register from './Containers/Register'
 import WelcomeScreen from './Containers/WelcomeScreen'
 import Deductable from './Containers/Deductables'
+import SplashScreen from './Containers/SplashScreen'
 
 import PayNow from './Containers/PayNow'
 import MyCard from './Containers/MyCard'
@@ -81,6 +82,10 @@ if(route.name == 'mapview'){
       return <MapView  navigator={navigator} />
 }
 
+if(route.name == 'splashscreen'){
+      return <SplashScreen  navigator={navigator} />
+}
+
 
 }
 
@@ -88,7 +93,7 @@ if(route.name == 'mapview'){
 configureScene(route){
     switch(route.name){
     case 'mainScreen':
-      return Navigator.SceneConfigs.FloatFromBottom
+      return Navigator.SceneConfigs.FadeAndroid
     case 'forgotPassword':
       return Navigator.SceneConfigs.FloatFromBottom
     case 'welcomeScreen':
@@ -156,7 +161,7 @@ render(){
 
 
       <Navigator
-      initialRoute={{name: 'mainScreen'}}
+      initialRoute={{name: 'splashscreen'}}
       renderScene={this.renderScene.bind(this)}
       //configureScene={()=>{return Navigator.SceneConfigs.FloatFromRight}}
       configureScene={this.configureScene.bind(this)}

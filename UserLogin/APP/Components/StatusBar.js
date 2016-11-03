@@ -102,6 +102,7 @@ class StatusBar extends Component{
           justifyContent :'center',
           marginLeft : 30
       }}>
+      
         <Text
         style={{
           fontSize : 18,
@@ -112,6 +113,7 @@ class StatusBar extends Component{
 
         }}
         >{this.props.title}</Text>
+
         </View>
 
 
